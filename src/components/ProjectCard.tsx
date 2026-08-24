@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Project } from '../types';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { getAssetUrl } from '../utils/assets';
 
 interface ProjectCardProps {
   project: Project;
@@ -16,7 +17,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDetails
       {/* Image Preview Container */}
       <div className="relative aspect-video w-full overflow-hidden bg-zinc-950">
         <img
-          src={project.image}
+          src={getAssetUrl(project.image)}
           alt={project.title}
           className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
           loading="lazy"

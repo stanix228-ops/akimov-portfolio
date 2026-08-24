@@ -9,6 +9,7 @@ import { LawCalculatorDemo } from './demos/LawCalculatorDemo';
 import { TwoGisDemo } from './demos/TwoGisDemo';
 import { FoodRushDemo } from './demos/FoodRushDemo';
 import { PsnDemo } from './demos/PsnDemo';
+import { getAssetUrl } from '../utils/assets';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -68,7 +69,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           {/* Main Visual Image Banner */}
           <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-video w-full bg-zinc-900">
             <img
-              src={project.image}
+              src={getAssetUrl(project.image)}
               alt={project.title}
               className="w-full h-full object-cover"
             />
