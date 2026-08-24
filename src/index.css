@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-background: hsl(0, 9%, 7%);
+  --color-background-card: hsl(0, 6%, 10%);
+  --color-background-card-hover: hsl(0, 5%, 14%);
+  --color-border: hsl(0, 3%, 28%);
+  --color-border-weak: hsl(0, 4%, 20%);
+  --color-text-strong: hsl(0, 15%, 94%);
+  --color-text: hsl(0, 4%, 75%);
+  --color-text-weak: hsl(0, 2%, 50%);
+  --font-mono: 'Geist Mono', 'JetBrains Mono', monospace;
+}
+
+/* Force OpenCode Monospace font globally */
+*, ::before, ::after {
+  font-family: var(--font-mono) !important;
+}
+
+html {
+  background-color: var(--color-background) !important;
+  color: var(--color-text-strong) !important;
+  font-family: var(--font-mono) !important;
+}
+
+body {
+  background-color: var(--color-background) !important;
+  color: var(--color-text-strong) !important;
+  font-family: var(--font-mono) !important;
+  line-height: 1.8;
+  @apply antialiased selection:bg-cyan-500/30 selection:text-white;
+}
+
+p {
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-strong);
+  letter-spacing: -0.02em;
+}
+
+/* OpenCode Zen Container Boundaries */
+.opencode-container {
+  max-width: 67.5rem;
+  margin: 0 auto;
+}
+
+/* Card Styling */
+.zen-card {
+  background-color: hsl(0, 6%, 10%) !important;
+  border: 1px solid hsl(0, 4%, 20%) !important;
+  border-radius: 12px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.zen-card:hover {
+  background-color: hsl(0, 5%, 14%) !important;
+  border-color: hsl(0, 3%, 30%) !important;
+}
+
+.glass-panel {
+  background: rgba(16, 14, 14, 0.92) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.gradient-text-cyan {
+  background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 50%, #2dd4bf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-amber {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #ea580c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(0, 9%, 7%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(0, 4%, 20%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 3%, 30%);
+}
